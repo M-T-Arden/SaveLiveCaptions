@@ -16,7 +16,6 @@
 
 1. Before you open this application, make sure you already **open the live captions on Windows** (or it will exit automatically). Then double click the `SaveLiveCaptions.exe`. A small dashboard will appear in the top-left corner of your screen. You can drag the background to move this window.
 
-   ![Dashboard.jpg](D:\Onedrive\图片\Screenshots\Screenshot 2025-05-28 211747.png)
 
 2. The **● (Circle)**  button is "start to save captions" and the **■ (Square) ** button is "stop and exit the application". 
 
@@ -24,7 +23,6 @@
 
 4. **Stop and exit: **When you click the square button, it stops and exit the application. You can find your captions file `YYYY-MM-DD_HH-MM-SS_captions.txt` in the chosen location like following.
 
-   ![caption files](D:\Onedrive\图片\Screenshots\Screenshot 2025-05-28 231826.png)
 
 ## License
 
