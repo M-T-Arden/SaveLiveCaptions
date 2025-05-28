@@ -20,9 +20,9 @@
 
 2. The **● (Circle)**  button is "start to save captions" and the **■ (Square)** button is "stop and exit the application". 
 
-3. **Start saving: **When you click the circle button, a file dialog will open to choose a save location. If you don't choose the direction, the default location is `~/Documents/captions`. 
+3. **Start saving:** When you click the circle button, a file dialog will open to choose a save location. If you don't choose the direction, the default location is `~/Documents/captions`. 
 
-4. **Stop and exit: **When you click the square button, it stops and exit the application. You can find your captions file `YYYY-MM-DD_HH-MM-SS_captions.txt` in the chosen location like following.
+4. **Stop and exit:** When you click the square button, it stops and exit the application. You can find your captions file `YYYY-MM-DD_HH-MM-SS_captions.txt` in the chosen location like following.
 
 ![Captions File Example](./assets/captionsFile.png)
 
