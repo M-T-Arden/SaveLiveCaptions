@@ -1,0 +1,53 @@
+name: Build, Package, and Release
+
+on:
+  push:
+    branches: [ main ]
+    tags: [ 'v*.*.*' ]  
+
+jobs:
+  build:
+    runs-on: windows-latest  
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v5
+      with:
+        python-version: '3.11'
+
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+        pip install pyinstaller  
+
+    - name: Build exe
+      run: |
+        pyinstaller --onefile --windowed --name savelivecaptions src/main.py  
+
+    - name: Upload to Artifacts (for quick testing)
+      uses: actions/upload-artifact@v4
+      with:
+        name: savelivecaptions-exe
+        path: dist/savelivecaptions.exe
+        retention-days: 7  
+
+    - name: Create Release and Upload exe (only on tags)
+      if: startsWith(github.ref, 'refs/tags/')  
+      uses: softprops/action-gh-release@v2  
+      with:
+        files: dist/savelivecaptions.exe
+        tag_name: ${{ github.ref_name }}  
+        name: Release ${{ github.ref_name }}
+        body: |
+          ## 新版本发布！
+          ## NEW Release
+          - 下载 main.exe 双击运行（无需安装 Python）。
+          - Download the exe to run the application.
+        draft: false
+        prerelease: false
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  # 自动授权
