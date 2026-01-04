@@ -26,7 +26,7 @@ jobs:
 
     - name: Build exe
       run: |
-        pyinstaller --onefile --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions src/main.py  
+        pyinstaller --clean --onefile --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions src/main.py  
 
     - name: Upload to Artifacts (for quick testing)
       uses: actions/upload-artifact@v4
