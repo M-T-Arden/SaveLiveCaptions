@@ -1,6 +1,6 @@
 # Save Live Captions
 
-**Tired of losing live captions on Windows?**  This is a simple tool to save the content of live captions! The application is in the `dist` folder and you can also download from release.
+**Tired of losing live captions on Windows?**  This is a simple tool to save the content of live captions! You can also download from release.
 
 ###  Features
 
@@ -29,3 +29,4 @@
 ## License
 
 This project is licensed under the MIT License.
+
