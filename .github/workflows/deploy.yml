@@ -26,13 +26,13 @@ jobs:
 
     - name: Build exe
       run: |
-        pyinstaller --onefile --windowed --name savelivecaptions src/main.py  
+        pyinstaller --onefile --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions src/main.py  
 
     - name: Upload to Artifacts (for quick testing)
       uses: actions/upload-artifact@v4
       with:
         name: savelivecaptions-exe
-        path: dist/savelivecaptions.exe
+        path: dist/SaveLiveCaptions.exe
         retention-days: 7  
 
     - name: Create Release and Upload exe (only on tags)
@@ -45,7 +45,7 @@ jobs:
         body: |
           ## 新版本发布！
           ## NEW Release
-          - 下载 main.exe 双击运行（无需安装 Python）。
+          - 下载 Save Live Captions.exe 双击运行（无需安装 Python）。
           - Download the exe to run the application.
         draft: false
         prerelease: false
