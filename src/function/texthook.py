@@ -9,9 +9,9 @@ from .transformation import word_to_number
 
 last_full_text = ""
 
-saved_sentences = []
+saved_sentences : list[str] = []
 
-current_sentences = {}  # {sentence: stable_count}
+current_sentences : dict[str, int] = {}  # {sentence: stable_count}
 
 def longest_common_prefix(a: str, b: str) -> int:
     i = 0
@@ -137,7 +137,7 @@ def cleanup_file(filename: str):
         if not lines:
             return
         
-        cleaned_lines = []
+        cleaned_lines : list[str] = []
         i = 0
         
         while i < len(lines):
