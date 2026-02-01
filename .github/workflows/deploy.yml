@@ -51,9 +51,9 @@ jobs:
         retention-days: 7  
     
     - name: Compile Inno Setup Script
-      uses: scottmotte/github-action-inno-setup@v1.2.0
-      with:
-        filepath: installer.iss 
+      shell: pwsh
+      run: |
+        & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer.iss
 
     - name: Upload Setup to Artifacts
       uses: actions/upload-artifact@v4
