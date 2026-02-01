@@ -6,7 +6,7 @@
 #define MyAppExeName "SaveLiveCaptions_Folder.exe"
 
 [Setup]
-AppId={{{696FDCA2-CFAF-49EE-B803-EAE6FA86BA2D}}
+AppId={{696FDCA2-CFAF-49EE-B803-EAE6FA86BA2D}
 AppName={#MyAppName}
 AppVersion={#MyAppVersion}
 AppPublisher={#MyAppPublisher}
