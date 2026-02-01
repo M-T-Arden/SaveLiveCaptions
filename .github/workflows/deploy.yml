@@ -35,20 +35,28 @@ jobs:
 
     - name: Build exe
       run: |
-        pyinstaller --clean --onefile --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions src/main.py  
+        # Onefile
+        pyinstaller --clean --onefile --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions_SingleFile src/main.py
+        
+        # Onedir
+        pyinstaller --clean --onedir --windowed --icon=assets/SaveLC.ico --name SaveLiveCaptions_Folder src/main.py  
 
     - name: Upload to Artifacts (for quick testing)
       uses: actions/upload-artifact@v4
       with:
-        name: savelivecaptions-exe
-        path: dist/SaveLiveCaptions.exe
+        name: SaveLiveCaptions_Builds
+        path: |
+          dist/SaveLiveCaptions_SingleFile.exe
+          dist/SaveLiveCaptions_Folder/
         retention-days: 7  
 
     - name: Create Release and Upload exe (only on tags)
       if: startsWith(github.ref, 'refs/tags/')  
       uses: softprops/action-gh-release@v2  
       with:
-        files: dist/savelivecaptions.exe
+        files: |
+          dist/SaveLiveCaptions_SingleFile.exe
+          dist/SaveLiveCaptions_Folder.zip
         tag_name: ${{ github.ref_name }}  
         name: Release ${{ github.ref_name }}
         body: |
