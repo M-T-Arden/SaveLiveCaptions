@@ -1,6 +1,29 @@
 # Save Live Captions
 
-**Tired of losing live captions on Windows?**  This is a simple tool to save the content of live captions! You can also download from release.
+**Tired of losing live captions on Windows?**  This is a simple tool to save the content of live captions! 
+
+###  Installation
+### Option 1: Quick Start (Executable)
+You can download the latest version from the [Releases](../../releases) page.
+
+> [!IMPORTANT]
+> **Note on Antivirus Alerts:** If you encounter a malware warning for the `.exe` file, it is likely a **false positive** due to the lack of a digital signature. If you worry about this, try option 2 as follows. 
+
+### Option 2: Run from Source (Recommended for Security)
+If you prefer to run the code directly, follow these steps in your bash/PowerShell/cmd:
+
+1. **Clone this repo**:
+   ```bash
+   git clone https://github.com/LiveCaptionsHelper/SaveLiveCaptions.git
+   ```
+2. **Install dependencies**:
+   ```bash
+   pip install -r requirements.txt
+   ```
+3. **Run the tool**:
+   ```bash
+   python src/main.py
+   ```
 
 ###  Features
 
@@ -29,4 +52,5 @@
 ## License
 
 This project is licensed under the MIT License.
+
 
