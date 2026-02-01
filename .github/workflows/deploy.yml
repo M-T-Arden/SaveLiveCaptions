@@ -21,6 +21,15 @@ jobs:
         python-version: '3.11'
         cache: 'pip' # dependencies cache
 
+    - name: Cache Nuitka dependencies
+      uses: actions/cache@v4
+      with:
+        path: |
+          ~/AppData/Local/Nuitka/Nuitka/Cache
+        key: ${{ runner.os }}-nuitka-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-nuitka-
+          
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
@@ -40,6 +49,7 @@ jobs:
         --standalone 
         --onefile 
         --windows-disable-console 
+        --assume-yes-for-downloads
         --plugin-enable=tk-inter 
         --windows-icon-from-ico=assets/SaveLC.ico 
         --output-filename=SaveLiveCaptions.exe 
