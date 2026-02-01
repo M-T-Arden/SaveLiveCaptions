@@ -36,7 +36,8 @@ jobs:
 
     - name: Build exe with Nuitka
       run: |
-        python -m nuitka --standalone --onefile --windows-disable-console ` --plugin-enable=tk-inter
+        python -m nuitka --standalone --onefile --windows-disable-console`
+          --plugin-enable=tk-inter `
           --windows-icon-from-ico=assets/SaveLC.ico `
           --output-filename=SaveLiveCaptions.exe `
           --output-dir=dist `
